@@ -51,7 +51,7 @@ public class UnityMainThreadDispatcher : MonoBehaviour {
         /// <summary>
         /// Locks the queue and adds the Action to the queue
 	/// </summary>
-	/// <param name="action">function that will be executed from the main thread.</param>
+	/// <param name="action">Function that will be executed from the main thread.</param>
 	public void Enqueue(Action action)
 	{
 		Enqueue(ActionWrapper(action));
