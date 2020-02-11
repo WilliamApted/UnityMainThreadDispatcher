@@ -28,7 +28,7 @@ No dependencies needed other than Unity.
 ###  Simple Method
 
 ```C#
-	UnityMainThreadDispatcher.Instance().Enqueue(() => MethodToCall(SomeInput));
+	UnityMainThreadDispatcher.Enqueue(() => MethodToCall(SomeInput));
 ```
 
 ### Alternative
