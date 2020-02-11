@@ -14,11 +14,12 @@ Latest version tested with Unity 2019.3.0f6.
 
 No dependencies needed other than Unity. 
 
-1. Download the UnityMainThreadDispatcher prefab and add it to your scene
+1. Download the latest Unity Package release and import it to your project.\
+	OR
+	1. Download the UnityMainThreadDispatcher prefab and add it to your scene
+	2. Download the UnityMainThreadDispatcher.cs script and add it to the prefab.
 
-2. Download the UnityMainThreadDispatcher.cs script and add it to the prefab.
-
-3. Place the above prefab with code attached in any scene you want to use the main thread dispatcher. 
+3. Place the prefab with code attached in any scene you want to use the main thread dispatcher. 
 
 4. You are now ready to call methods on the main thread with the below code.
 
