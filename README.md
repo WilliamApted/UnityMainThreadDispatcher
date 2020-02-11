@@ -1,19 +1,37 @@
-# UnityMainThreadDispatcher
+# UnityMainThreadDispatcher 2020
 
-A thread-safe way of dispatching IEnumerator functions to the main thread in unity. Useful for calling UI functions and other actions that Unity limits to the main thread from different threads. Initially written for Firebase Unity but now used across the board!
+A thread-safe way of calling functions/methods on the main thread.
 
-### Version
-1.0 - Tested and functional in one or more production mobile games (including https://get-wrecked.com)
+### When is it useful?
 
-### Installation
+* Calling methods to manipulate the GUI from anywhere
+* Other actions typically limited to the main thread
 
-No dependencies needed other than Unity. This script was created in Unity 5.3, and has been tested in 5.3, 5.4, and 5.5.
+## Version
+Latest version tested with Unity 2019.3.0f6.
 
-1. Download the UnityMainThreadDispatcher prefab and add it to your scene, or simple create an empty GameObject, call it UnityMainThreadDispatcher.
-2. Download the UnityMainThreadDispatcher.cs script and add it to your prefab
-3. You can now dispatch objects to the main thread in Unity.
+## Installation
 
-### Usage
+No dependencies needed other than Unity. 
+
+1. Download the UnityMainThreadDispatcher prefab and add it to your scene
+
+2. Download the UnityMainThreadDispatcher.cs script and add it to the prefab.
+
+3. Place the above prefab with code attached in any scene you want to use the main thread dispatcher. 
+
+4. You are now ready to call methods on the main thread with the below code.
+
+## Usage
+
+###  Simple Method
+
+```C#
+	UnityMainThreadDispatcher.Instance().Enqueue(() => MethodToCall(SomeInput));
+```
+
+### Alternative
+
 ```C#
 	public IEnumerator ThisWillBeExecutedOnTheMainThread() {
 		Debug.Log ("This is executed from the main thread");
@@ -23,17 +41,9 @@ No dependencies needed other than Unity. This script was created in Unity 5.3, a
 		UnityMainThreadDispatcher.Instance().Enqueue(ThisWillBeExecutedOnTheMainThread()); 
 	}
 ```
-OR
-
-```C#
-	UnityMainThreadDispatcher.Instance().Enqueue(() => Debug.Log ("This is executed from the main thread"));
-```
-### Development
-
-Want to contribute? Great! If you find a bug or want to make improvements, simply fork the repo and make a pull request with your changes on your own fork.
 
 ### Author
-@PimDeWitte
+Originally created by @PimDeWitte, this fork by @WilliamApted tests and maintains the project with the latest unity versions. 
 
 
 
